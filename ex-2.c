@@ -1,16 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
+	FILE* fPointer;
+	fPointer = fopen("output.txt", "r");
+	int singleLine[150];
 
-    printf("Run the damn code");
-    return 0;
-	// FILE* in_file = fopen("output", "r");
+	while(!feof(fPointer)) {
+		fgets(singleLine, 150, fPointer);
+		puts(singleLine);
+		// printf("\n %d", singleLine);
+	}
 
-    // if (in_file == NULL || out_file == NULL)
-    // {
-    //     printf("Error! Could not open file\n");
-    //     exit(-1); // must include stdlib.h 
-    // }
-
-    // printf("this is a test %d\n", integer); // write to screen
+	fclose(fPointer);
+	return 0;
 }
