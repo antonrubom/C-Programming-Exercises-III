@@ -1,0 +1,16 @@
+#include<stdio.h>
+
+    int main()
+
+{
+    FILE * texttoberead;
+    int counter = 1;
+    char c;
+    texttoberead = fopen("input.txt", "r");
+    while((c = fgetc(texttoberead)) != EOF) {
+        if(c == ' ' || c == '\n')
+            counter++;
+    }
+    printf("Number of words = %d\n", counter);
+    return 0;
+}
