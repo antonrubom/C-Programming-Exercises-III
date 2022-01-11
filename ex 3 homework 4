@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<string.h>
+#include<fstream>
+    int main()
+
+{
+    FILE * texttoberead;
+    char currentLetter;
+    texttoberead = fopen("input.txt", "r");
+    while((currentLetter = fgetc(texttoberead)) != EOF) {
+        if(currentLetter != 'a' && currentLetter != 'e')
+        {
+        printf("%c", currentLetter);
+        }
+    }
+    return 0;
+}
