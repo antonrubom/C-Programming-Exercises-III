@@ -2,16 +2,18 @@
 #include <stdlib.h>
 
 int main() {
-	FILE* fPointer;
-	fPointer = fopen("output.txt", "r");
-	int singleLine[150];
-
-	while(!feof(fPointer)) {
-		fgets(singleLine, 150, fPointer);
-		puts(singleLine);
-		// printf("\n %d", singleLine);
+	int eachLine;
+	int sum=0, a;
+	FILE* fCurrent;
+	char buf[256];
+	fCurrent = fopen("output.txt", "r");
+	while(fscanf(fCurrent,"%d", &eachLine) != EOF) {
+	sum = sum + eachLine;
+		
 	}
-
-	fclose(fPointer);
+// 	fgets(buf, 256, fCurrent);
+	// printf("%s\n", eachLine[0]);
+	printf("The total is: %d\n", sum);
+	fclose(fCurrent);
 	return 0;
 }
